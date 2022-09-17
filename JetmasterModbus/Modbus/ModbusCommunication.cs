@@ -35,7 +35,6 @@ namespace JetmasterModbus.Modbus
             serialPort.Parity = _Parity;
             serialPort.StopBits = _StopBits;
             serialPort.PortName = _PortName;
-
             serialPort.ReadTimeout = 400;
             serialPort.WriteTimeout = 400;
 
