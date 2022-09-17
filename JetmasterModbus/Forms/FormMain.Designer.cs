@@ -233,6 +233,7 @@
             this.btnExit.Size = new System.Drawing.Size(22, 22);
             this.btnExit.TabIndex = 1;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 

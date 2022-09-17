@@ -100,5 +100,10 @@ namespace JetmasterModbus
         {
             _lbxErrorLogger.Items.Add(DateTime.Now + "\t " + msg);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

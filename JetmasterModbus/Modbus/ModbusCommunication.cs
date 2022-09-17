@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace JetmasterModbus.Modbus
             serialPort.StopBits = _StopBits;
             serialPort.PortName = _PortName;
 
-            serialPort.ReadTimeout = 400;
+            serialPort.ReadTimeout = 50;
             serialPort.WriteTimeout = 400;
 
             modbusSerialMaster = ModbusSerialMaster.CreateRtu(serialPort);
@@ -59,15 +60,24 @@ namespace JetmasterModbus.Modbus
             }
         }
 
+        public ushort[] ReadHoldingRegisterTest() =>
+            Task.Run(() => ReadHoldingRegisters()).ConfigureAwait(false).GetAwaiter().GetResult();
+
         public Task<ushort[]> ReadHoldingRegisters()
         {
-            return modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, 0, 55);
+            var data = modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, 0, 55);
+            var registers = new List<ushort[]>();
+
+            return data;   
         }
 
-        public void WriteHoldingRegisters(int val)
+        public void WriteHoldingRegisterTest(int val) =>
+            Task.Run(() => WriteHoldingRegisters(val)).ConfigureAwait(false).GetAwaiter().GetResult();
+
+        public async Task WriteHoldingRegisters(int val)
         {
             var modbusSerialRTU = new ModbusSerialRTU(modbusSerialMaster);
-            modbusSerialMaster.WriteSingleRegisterAsync((byte)_SlaveId, 1, (ushort)val);
+            await modbusSerialMaster.WriteSingleRegisterAsync((byte)_SlaveId, 1, (ushort)val);
         }
     }
 }

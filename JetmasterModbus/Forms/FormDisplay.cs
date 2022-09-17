@@ -36,7 +36,7 @@ namespace JetmasterModbus.Forms
                 Registers.Add(new Register() { Address = (ushort)(0 + i) }); // cast type to ushort.
             }
 
-            Task.Run(() => ReadHoldingRegister());
+            Task.Run(() => Test());
 
             dcFirstValue.Register = Registers[1];
             dcSecondValue.Register = Registers[50];
@@ -48,6 +48,40 @@ namespace JetmasterModbus.Forms
 
         bool Disconnect = false;
         int lastErrorVal = 0;
+
+        public void Test()
+        {
+            if (ModbusCommunication.Connect() == true)
+            {
+                while (Disconnect == false)
+                {
+                    var data = ModbusCommunication.ReadHoldingRegisterTest();
+
+                    for (int i = 0; i < data.Length; i++)
+                    {
+                        Registers[i].Value = data[i];
+                    }
+
+                    int ErrorVal = Registers[51].Value;
+
+                    if (ErrorVal != 0 && ErrorVal != lastErrorVal)
+                    {
+                        lastErrorVal = ErrorVal;
+
+                        string errorVal = JetmasterConfigs.CatchUp(ErrorVal);
+                        FormMain.SendErrorLog
+                            ("| Error | " +
+                            " | Bağlantı Portu : " + PortName + " | " +
+                            " | Bağlantı Başlığı : " + Description + " | " +
+                            "Hata Kodu : " + errorVal);
+                    }
+                    else if (ErrorVal == 0 && lastErrorVal != 0) lastErrorVal = 0;
+                }
+            }
+
+        }
+
+
         public void ReadHoldingRegister()
         {
             if (ModbusCommunication.Connect() == true)
@@ -81,7 +115,7 @@ namespace JetmasterModbus.Forms
 
         public void WriteHoldingRegisters(int val)
         {
-            Task.Run(() => ModbusCommunication.WriteHoldingRegisters(val));
+            Task.Run(() => ModbusCommunication.WriteHoldingRegisterTest(val));
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
