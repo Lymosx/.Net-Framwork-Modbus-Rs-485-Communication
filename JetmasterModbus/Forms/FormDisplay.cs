@@ -55,7 +55,7 @@ namespace JetmasterModbus.Forms
             {
                 while (Disconnect == false)
                 {
-                    var data = ModbusCommunication.ReadHoldingRegisterTest();
+                    var data = ModbusCommunication.ReadHoldingRegistersAsync();
 
                     for (int i = 0; i < data.Length; i++)
                     {
@@ -81,41 +81,9 @@ namespace JetmasterModbus.Forms
 
         }
 
-
-        public void ReadHoldingRegister()
-        {
-            if (ModbusCommunication.Connect() == true)
-            {
-                while (Disconnect == false)
-                {
-                    var data = ModbusCommunication.ReadHoldingRegisters();
-
-                    for (int i = 0; i < data.Result.Length; i++)
-                    {
-                        Registers[i].Value = data.Result[i];
-                    }
-
-                    int ErrorVal = Registers[51].Value;
-
-                    if (ErrorVal != 0 && ErrorVal != lastErrorVal)
-                    {
-                        lastErrorVal = ErrorVal;
-
-                        string errorVal = JetmasterConfigs.CatchUp(ErrorVal);
-                        FormMain.SendErrorLog
-                            ("| Error | " +
-                            " | Bağlantı Portu : " + PortName + " | " + 
-                            " | Bağlantı Başlığı : " + Description + " | " + 
-                            "Hata Kodu : " + errorVal);
-                    }
-                    else if (ErrorVal == 0 && lastErrorVal != 0) lastErrorVal = 0;
-                }
-            }
-        }
-
         public void WriteHoldingRegisters(int val)
         {
-            Task.Run(() => ModbusCommunication.WriteHoldingRegisterTest(val));
+            Task.Run(() => ModbusCommunication.WriteHoldingRegister(val));
         }
 
         private void btnConfig_Click(object sender, EventArgs e)

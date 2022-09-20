@@ -28,6 +28,11 @@ namespace JetmasterModbus.Modbus
         public StopBits _StopBits { get; set; }
         public int _SlaveId { get; set; }
 
+        // Jetmaster Modbus Communication Configs Count.
+        private ushort NumberOfPoints = 55;
+        // Jetmaster Modbus Communication Start Adress.
+        private ushort StartAdress = 0;
+
         public bool Connect()
         {
             serialPort = new SerialPort();
@@ -61,23 +66,14 @@ namespace JetmasterModbus.Modbus
             }
         }
 
-        public ushort[] ReadHoldingRegisterTest() =>
-            Task.Run(() => ReadHoldingRegisters()).ConfigureAwait(false).GetAwaiter().GetResult();
+        public ushort[] ReadHoldingRegistersAsync() =>
+                Task.Run(() => modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, StartAdress, NumberOfPoints)).ConfigureAwait(false).GetAwaiter().GetResult();
 
-        public Task<ushort[]> ReadHoldingRegisters()
+        public void WriteHoldingRegister(int val) =>
+            Task.Run(() => WriteHoldingRegisterAsync(val)).ConfigureAwait(false).GetAwaiter().GetResult();
+
+        public async Task WriteHoldingRegisterAsync(int val)
         {
-            var data = modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, 0, 55);
-            var registers = new List<ushort[]>();
-
-            return data;   
-        }
-
-        public void WriteHoldingRegisterTest(int val) =>
-            Task.Run(() => WriteHoldingRegisters(val)).ConfigureAwait(false).GetAwaiter().GetResult();
-
-        public async Task WriteHoldingRegisters(int val)
-        {
-            var modbusSerialRTU = new ModbusSerialRTU(modbusSerialMaster);
             await modbusSerialMaster.WriteSingleRegisterAsync((byte)_SlaveId, 1, (ushort)val);
         }
     }
