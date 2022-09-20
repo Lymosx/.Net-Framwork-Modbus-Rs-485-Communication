@@ -66,8 +66,10 @@ namespace JetmasterModbus.Modbus
             }
         }
 
-        public ushort[] ReadHoldingRegistersAsync() =>
-                Task.Run(() => modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, StartAdress, NumberOfPoints)).ConfigureAwait(false).GetAwaiter().GetResult();
+        public ushort[] ReadHoldingRegistersAsync()
+        {
+            return Task.Run(() => modbusSerialMaster.ReadHoldingRegistersAsync((byte)_SlaveId, StartAdress, NumberOfPoints)).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
 
         public void WriteHoldingRegister(int val) =>
             Task.Run(() => WriteHoldingRegisterAsync(val)).ConfigureAwait(false).GetAwaiter().GetResult();

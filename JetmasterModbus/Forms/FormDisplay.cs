@@ -51,34 +51,40 @@ namespace JetmasterModbus.Forms
 
         public void Test()
         {
-            if (ModbusCommunication.Connect() == true)
+            try
             {
-                while (Disconnect == false)
+                if (ModbusCommunication.Connect() == true)
                 {
-                    var data = ModbusCommunication.ReadHoldingRegistersAsync();
-
-                    for (int i = 0; i < data.Length; i++)
+                    while (Disconnect == false)
                     {
-                        Registers[i].Value = data[i];
+                        var data = ModbusCommunication.ReadHoldingRegistersAsync();
+
+                        for (int i = 0; i < data.Length; i++)
+                        {
+                            Registers[i].Value = data[i];
+                        }
+
+                        int ErrorVal = Registers[51].Value;
+
+                        if (ErrorVal != 0 && ErrorVal != lastErrorVal)
+                        {
+                            lastErrorVal = ErrorVal;
+
+                            string errorVal = JetmasterConfigs.CatchUp(ErrorVal);
+                            FormMain.SendErrorLog
+                                ("| Error | " +
+                                " | Bağlantı Portu : " + PortName + " | " +
+                                " | Bağlantı Başlığı : " + Description + " | " +
+                                "Hata Kodu : " + errorVal);
+                        }
+                        else if (ErrorVal == 0 && lastErrorVal != 0) lastErrorVal = 0;
                     }
-
-                    int ErrorVal = Registers[51].Value;
-
-                    if (ErrorVal != 0 && ErrorVal != lastErrorVal)
-                    {
-                        lastErrorVal = ErrorVal;
-
-                        string errorVal = JetmasterConfigs.CatchUp(ErrorVal);
-                        FormMain.SendErrorLog
-                            ("| Error | " +
-                            " | Bağlantı Portu : " + PortName + " | " +
-                            " | Bağlantı Başlığı : " + Description + " | " +
-                            "Hata Kodu : " + errorVal);
-                    }
-                    else if (ErrorVal == 0 && lastErrorVal != 0) lastErrorVal = 0;
                 }
             }
-
+            catch (Exception exception)
+            {
+                FormMain.SendLog(PortName + " | Bağlantı kurulamadı. - "  + exception.Message);
+            }
         }
 
         public void WriteHoldingRegisters(int val)
