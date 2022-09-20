@@ -103,6 +103,24 @@ namespace JetmasterModbus
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            Environment.Exit(1);
+        }
+
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
 
         }
     }
