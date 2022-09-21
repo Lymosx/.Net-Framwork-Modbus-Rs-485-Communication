@@ -54,8 +54,8 @@ namespace JetmasterModbus.Forms
             grapPressure.XAxis.Interval = 10;
 
             grapPressure.YAxis.MinValue = 0;
-            grapPressure.YAxis.MaxValue = 50;
-            grapPressure.YAxis.Interval = 10;
+            grapPressure.YAxis.MaxValue = 500;
+            grapPressure.YAxis.Interval = 50;
             grapPressure.YAxis.Title = "Current Requests\n(in thousands)";
 
             List<Brush> brushes = new List<Brush>()
