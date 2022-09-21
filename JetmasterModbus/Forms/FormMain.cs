@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JetmasterModbus.Forms;
 using JetmasterModbus.Modbus;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace JetmasterModbus
 {
@@ -15,7 +16,6 @@ namespace JetmasterModbus
         public FormMain()
         {
             InitializeComponent();
-
             CheckForIllegalCrossThreadCalls = false;
 
             _flpDisplay = flpDisplay;
@@ -24,6 +24,7 @@ namespace JetmasterModbus
         }
 
         public static FormDisplay _formDisplay;
+        public static FormPressure _formPressure;
 
         public static FlowLayoutPanel _flpDisplay;
         public static ListBox _lbxLogger;
@@ -76,9 +77,10 @@ namespace JetmasterModbus
             try
             {
                 formDisplay.TopLevel = false;
-                formDisplay.AutoScroll = false;
+                formDisplay.AutoScroll = true;
                 formDisplay.AutoSize = true;
-                //formDisplay.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                //formDisplay.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                formDisplay.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                 boundPortAdressess.Add(formDisplay.PortName);
                 formPressureDisplaysControl.Add(formDisplay);
 
@@ -122,6 +124,26 @@ namespace JetmasterModbus
         {
             WindowState = FormWindowState.Minimized;
 
+        }
+
+
+        private void tabMain_Selected(object sender, TabControlEventArgs e)
+        {
+            if (e.TabPage == tabPressureGraph)
+            {
+                if (_formPressure != null)
+                {
+
+                }
+                else
+                {
+                    FormPressure formPressure = new FormPressure();
+                    formPressure.TopLevel = false;          
+                    tabPressureGraph.Controls.Add(formPressure);
+                    formPressure.Dock = DockStyle.Fill;
+                    formPressure.Show();
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using JetmasterModbus.BaseClient;
+using JetmasterModbus.Methods;
 using JetmasterModbus.Modbus;
 using Microsoft.Win32;
 using System;
@@ -64,6 +65,8 @@ namespace JetmasterModbus.Forms
                             Registers[i].Value = data[i];
                         }
 
+                        PressureChart._points = data;
+
                         int ErrorVal = Registers[51].Value;
 
                         if (ErrorVal != 0 && ErrorVal != lastErrorVal)
@@ -103,6 +106,7 @@ namespace JetmasterModbus.Forms
             Disconnect = true;
             FormMain.boundPortAdressess.Remove(this.PortName);
             FormMain._formDisplay = null;
+            FormMain.formPressureDisplaysControl.Remove(this);
 
             Thread.Sleep(200);
             ModbusCommunication.Disconnect();

@@ -36,6 +36,99 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="MindFusion.Barcodes, Version=1.0.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Barcodes.WinForms, Version=1.0.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Barcodes.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Charting, Version=4.2.0.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Charting.WinForms, Version=4.2.0.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Charting.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common, Version=1.3.5.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common.WinForms, Version=1.0.3.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Common.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.DataBinding, Version=2.5.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Pdf, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.Export.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Svg, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.Export.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Visio, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.Export.Visio.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.WinForms, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.WinForms.Controls, Version=6.8.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Diagramming.WinForms.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Gauges, Version=1.0.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Gauges.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Gauges.WinForms, Version=1.0.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Gauges.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Graphs, Version=2.3.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Keyboard.WinForms, Version=5.0.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Keyboard.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Licensing, Version=1.0.6.400, Culture=neutral, PublicKeyToken=9d02e21d957ddaef, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Mapping, Version=2.0.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Mapping.WinForms, Version=2.0.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Mapping.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Pdf, Version=1.3.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Reporting, Version=2.5.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Reporting.WinForms, Version=2.5.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Reporting.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Scheduling, Version=5.8.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Scheduling.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Scheduling.Pdf, Version=5.8.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Scheduling.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Scripting, Version=1.0.3.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Spreadsheet.WinForms, Version=1.7.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Spreadsheet.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Spreadsheet.WinForms.StandardForms, Version=1.7.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Spreadsheet.WinForms.StandardForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Svg, Version=1.2.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.UI.WinForms, Version=1.2.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Vsx, Version=1.0.4.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>..\packages\MindFusion.Pack.WinForms.2022.1.0\lib\net45\MindFusion.Vsx.dll</HintPath>
+    </Reference>
     <Reference Include="NModbus, Version=3.0.72.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NModbus.3.0.72\lib\net46\NModbus.dll</HintPath>
     </Reference>
@@ -47,6 +140,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +154,7 @@
   <ItemGroup>
     <Compile Include="Abstact\IModbus.cs" />
     <Compile Include="Abstact\IModbusSerial.cs" />
+    <Compile Include="Abstact\IPressure.cs" />
     <Compile Include="BaseClient\DisplayControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -89,6 +184,14 @@
     <Compile Include="Forms\FormDisplay.Designer.cs">
       <DependentUpon>FormDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPressure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPressure.Designer.cs">
+      <DependentUpon>FormPressure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Methods\JetmasterDateTimeSeries.cs" />
+    <Compile Include="Methods\PressureChart.cs" />
     <Compile Include="Modbus\ModbusCommunication.cs" />
     <Compile Include="ModbusSerial\ModbusSerialRTU.cs" />
     <Compile Include="Program.cs" />
@@ -108,6 +211,9 @@
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPressure.resx">
+      <DependentUpon>FormPressure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,7 +223,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Fakes Include="Fakes\NModbus4.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,6 +237,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

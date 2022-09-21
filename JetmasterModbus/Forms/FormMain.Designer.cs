@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.lbxErrorLogger = new System.Windows.Forms.ListBox();
             this.flpDisplay = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tlpDisplay = new System.Windows.Forms.TableLayoutPanel();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabErrorLog = new System.Windows.Forms.TabPage();
+            this.tabPressureGraph = new System.Windows.Forms.TabPage();
             this.panelHeader = new System.Windows.Forms.TableLayoutPanel();
             this.lblJetMaster = new System.Windows.Forms.Label();
             this.btnMin = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.panelFlutter = new System.Windows.Forms.Panel();
             this.msMain = new System.Windows.Forms.MenuStrip();
             this.tabHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tlpDisplay.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabErrorLog.SuspendLayout();
@@ -84,20 +86,9 @@
             this.flpDisplay.Size = new System.Drawing.Size(0, 0);
             this.flpDisplay.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(6, 425);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Display Test";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tabHome
             // 
-            this.tabHome.Controls.Add(this.button1);
+            this.tabHome.Controls.Add(this.pictureBox1);
             this.tabHome.Controls.Add(this.tlpDisplay);
             this.tabHome.Location = new System.Drawing.Point(4, 28);
             this.tabHome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -108,9 +99,21 @@
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 389);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(261, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // tlpDisplay
             // 
-            this.tlpDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDisplay.BackColor = System.Drawing.Color.DarkGray;
             this.tlpDisplay.ColumnCount = 1;
@@ -131,6 +134,7 @@
             // 
             this.tabMain.Controls.Add(this.tabHome);
             this.tabMain.Controls.Add(this.tabErrorLog);
+            this.tabMain.Controls.Add(this.tabPressureGraph);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabMain.Location = new System.Drawing.Point(0, 55);
@@ -139,6 +143,7 @@
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(1280, 498);
             this.tabMain.TabIndex = 18;
+            this.tabMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabMain_Selected);
             // 
             // tabErrorLog
             // 
@@ -151,6 +156,15 @@
             this.tabErrorLog.TabIndex = 1;
             this.tabErrorLog.Text = "Error Log";
             this.tabErrorLog.UseVisualStyleBackColor = true;
+            // 
+            // tabPressureGraph
+            // 
+            this.tabPressureGraph.Location = new System.Drawing.Point(4, 28);
+            this.tabPressureGraph.Name = "tabPressureGraph";
+            this.tabPressureGraph.Size = new System.Drawing.Size(1272, 466);
+            this.tabPressureGraph.TabIndex = 2;
+            this.tabPressureGraph.Text = "Pressure Graph";
+            this.tabPressureGraph.UseVisualStyleBackColor = true;
             // 
             // panelHeader
             // 
@@ -327,6 +341,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jetmaster";
             this.tabHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tlpDisplay.ResumeLayout(false);
             this.tlpDisplay.PerformLayout();
             this.tabMain.ResumeLayout(false);
@@ -346,7 +361,6 @@
 
         private System.Windows.Forms.ListBox lbxErrorLogger;
         private System.Windows.Forms.FlowLayoutPanel flpDisplay;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.TableLayoutPanel tlpDisplay;
         private System.Windows.Forms.TabControl tabMain;
@@ -363,6 +377,8 @@
         private System.Windows.Forms.GroupBox gbxLogger;
         private System.Windows.Forms.Panel panelFlutter;
         private System.Windows.Forms.MenuStrip msMain;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabPressureGraph;
     }
 }
 
