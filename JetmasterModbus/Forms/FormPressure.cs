@@ -29,7 +29,14 @@ namespace JetmasterModbus.Forms
             
 
             CheckForIllegalCrossThreadCalls = false;
+        }
 
+        Timer myTimer = new Timer();
+        Random random = new Random();
+        JetmasterDateTimeSeries series1;
+
+        private void FormPressure_Load(object sender, EventArgs e)
+        {
             ObservableCollection<Series> data = new ObservableCollection<Series>();
             grapPressure.LicenseKey = "license key stays here";
 
@@ -80,44 +87,35 @@ namespace JetmasterModbus.Forms
             myTimer.Interval = 1;
             myTimer.Start();
         }
-        private PressureChart pressureChart;
-        Timer myTimer = new Timer();
-        Random random = new Random();
-        JetmasterDateTimeSeries series1;
-
-
-        private void FormPressure_Load(object sender, EventArgs e)
-        {
-            pressureChart = new PressureChart();
-        }
-
 
         private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
-            if (FormMain.formPressureDisplaysControl.Count < 1)
+            if (FormMain.formPressureDisplaysControl.Count == 0)
             {
                 return;
             }
             else
             {
-                double val = FormMain.formPressureDisplaysControl[0].Registers[11].Value;
-                series1.addValue(val);
-
-                if (series1.Size > 1)
+                if (FormMain.formPressureDisplaysControl[0].Registers.Count > 54)
                 {
-                    double currVal = series1.GetValue(series1.Size - 1, 0);
+                    double val = FormMain.formPressureDisplaysControl[0].Registers[11].Value;
+                    series1.addValue(val);
 
-                    if (currVal > grapPressure.XAxis.MaxValue)
+                    if (series1.Size > 1)
                     {
-                        double span = currVal - series1.GetValue(series1.Size - 2, 0);
-                        grapPressure.XAxis.MinValue += span;
-                        grapPressure.XAxis.MaxValue += span;
+                        double currVal = series1.GetValue(series1.Size - 1, 0);
 
+                        if (currVal > grapPressure.XAxis.MaxValue)
+                        {
+                            double span = currVal - series1.GetValue(series1.Size - 2, 0);
+                            grapPressure.XAxis.MinValue += span;
+                            grapPressure.XAxis.MaxValue += span;
+
+                        }
+                        grapPressure.ChartPanel.InvalidateLayout();
                     }
-                    grapPressure.ChartPanel.InvalidateLayout();
                 }
             }
         }
-
     }
 }
