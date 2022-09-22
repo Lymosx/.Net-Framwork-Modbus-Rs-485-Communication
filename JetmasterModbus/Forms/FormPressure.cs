@@ -16,7 +16,6 @@ using System.Timers;
 using System.Windows.Forms;
 
 using Timer = System.Windows.Forms.Timer;
-using MindFusion.Charting;
 using Brush = MindFusion.Drawing.Brush;
 using SolidBrush = MindFusion.Drawing.SolidBrush;
 
@@ -36,7 +35,7 @@ namespace JetmasterModbus.Forms
 
             series1 = new JetmasterDateTimeSeries(DateTime.Now, DateTime.Now, DateTime.Now.AddMinutes(1));
             series1.DateTimeFormat = DateTimeFormat.LongTime;
-            series1.LabelInterval = 50;
+            series1.LabelInterval = 500;
             series1.MinValue = 0;
             series1.MaxValue = 120;
             series1.Title = "Jetmaster";
@@ -78,7 +77,7 @@ namespace JetmasterModbus.Forms
             myTimer.Tick += new EventHandler(TimerEventProcessor);
 
             // Sets the timer interval to half a seconds.
-            myTimer.Interval = 50;
+            myTimer.Interval = 1;
             myTimer.Start();
         }
         private PressureChart pressureChart;

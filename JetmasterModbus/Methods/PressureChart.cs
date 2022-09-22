@@ -10,15 +10,11 @@ namespace JetmasterModbus.Methods
 {
     public class PressureChart : IPressure
     {
-        private ushort _pressureVal;
-        private ushort _maxPressureVal;
-        private ushort _minPressureVal;
 
         public static ushort[] _points;
 
         private List<KeyValuePair<int,double>> PressureData = new List<KeyValuePair<int, double>>();
 
-        FormPressure formPressure;
 
         public PressureChart()
         {

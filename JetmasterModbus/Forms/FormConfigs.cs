@@ -183,6 +183,7 @@ namespace JetmasterModbus.Forms
             }
             else
             {
+                this.Close();
                 FormMain.SendLog("Bağlanılacak Port Yok !");
             }
         }
